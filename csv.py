@@ -10,3 +10,22 @@ with open("PKN.WA.csv", "r") as file:
 
 print(header)
 print(rows)
+
+import openpyxl
+
+def  excel_download(file, title):
+    data = openpyxl.load_workbook(file)
+    page = data[title]
+    setr_sayi = page.max_column
+    sutun_sayi = page.max_row
+
+    data = []
+    for i in range(1, setr_sayi):
+        setir = []
+        for j in range(1, sutun_sayi):
+            setir.append(page.cell(i,j).value)
+        data.append(setir)
+    return(data)
+
+print(excel_download("./data.xlsx", "kitaplar"))
+# print(file.sheetnames)
