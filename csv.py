@@ -29,3 +29,28 @@ def  excel_download(file, title):
 
 print(excel_download("./data.xlsx", "kitaplar"))
 # print(file.sheetnames)
+
+
+import datetime
+
+tday = datetime.date.today()
+
+
+print(tday.weekday())
+
+print(tday.isoweekday())
+
+
+# Monday 0 - Sunday 6 (weekday)
+# Monday 0 - Sunday 7 (isoweekday)
+
+
+import datetime
+
+today = datetime.date.today()
+
+war_date = datetime.date(2025, 10, 15)
+
+till_war = war_date - today
+
+print(till_war)
